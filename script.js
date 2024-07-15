@@ -227,6 +227,28 @@ function init() {
     document.getElementById('c').addEventListener('mouseup', function (e) {
         mousePressed = false;
     });
+
+    // Add touch event listeners to canvas element
+    document.getElementById('c').addEventListener('touchstart', function (e) {
+        mousePressed = true;
+        draw(e.touches[0].pageX - e.target.offsetLeft, e.touches[0].pageY - e.target.offsetTop, false);
+    });
+
+    document.getElementById('c').addEventListener('touchmove', function (e) {
+        if (mousePressed) {
+            draw(e.touches[0].pageX - e.target.offsetLeft, e.touches[0].pageY - e.target.offsetTop, true);
+        }
+    });
+
+    document.getElementById('c').addEventListener('touchend', function (e) {
+        mousePressed = false;
+    });
+
+    document.getElementById('c').addEventListener('touchcancel', function (e) {
+        mousePressed = false;
+    });
+
+    
     
 }
 
