@@ -8,7 +8,7 @@ async function showExamples(data) {
     tfvis.visor().surface({ name: 'Input Data Examples', tab: 'Input Data'});  
 
   // Get the examples
-  const examples = data.nextTestBatch(20);
+  const examples = data.nextTestBatch(50);
   const numExamples = examples.xs.shape[0];
   
   // Create a canvas element to render each example
@@ -248,7 +248,7 @@ function init() {
         mousePressed = false;
     });
 
-    
+
     
 }
 
